@@ -6,7 +6,7 @@ namespace WebApplication6
         {
             var builder = WebApplication.CreateBuilder(args);
 
- 
+            //помогите....
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
