@@ -6,7 +6,7 @@ namespace WebApplication6
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Я ебану тут свой комментарий. Чтобы у тебя был конфликт. Реши его таким образом, чтобы остался именно этот комментарий.
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
@@ -15,7 +15,7 @@ namespace WebApplication6
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                // Я ебану тут свой комментарий. Чтобы у тебя был конфликт. Реши его таким образом, чтобы остался именно этот комментарий.
                 app.UseHsts();
             }
 
