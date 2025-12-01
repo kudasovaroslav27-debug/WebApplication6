@@ -9,6 +9,8 @@ namespace WebApplication6
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Я ебану тут свой комментарий. Чтобы у тебя был конфликт. Реши его таким образом, чтобы остался именно этот комментарий.
+            builder.Services.AddRazorPages();
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
