@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi;
-
 namespace WebApplication6
 {
     public class Program
@@ -9,41 +6,26 @@ namespace WebApplication6
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Я ебану тут свой комментарий. Чтобы у тебя был конфликт. Реши его таким образом, чтобы остался именно этот комментарий.
             builder.Services.AddRazorPages();
-
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            {
-                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
-            });
-
-            builder.Services.AddControllers();
-
-            builder.Services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = ".Net 9 API", Version = "v1" });
-            });
-
-
-            builder.Services.AddOpenApi();
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
+            if (!app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
-                app.UseSwagger();
-                app.UseSwaggerUI(options =>
-                {
-                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger UI for .Net 9");
-                    options.RoutePrefix = string.Empty;
-                });
-
+                app.UseExceptionHandler("/errorchik");
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
+
+            app.UseRouting();
+
             app.UseAuthorization();
-            app.MapControllers();
+
+            app.MapStaticAssets();
+            app.MapRazorPages()
+               .WithStaticAssets();
+
             app.Run();
         }
     }
