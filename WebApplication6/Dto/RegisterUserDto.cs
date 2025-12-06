@@ -12,5 +12,8 @@ namespace WebApplication6.Dto
         public string Phone { get; set; }
 
         public DateTime Birthday { get; set; }
+        public bool SendEmail { get; internal set; }
+        public string TemplateType { get; internal set; }
+        public bool SendSMS { get; internal set; }
     }
 }

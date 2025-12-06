@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApplication6.Entities;
 
-namespace WebApplication6
+namespace WebApplication6.Data
 {
     public class ApplicationDbContext : DbContext
     {
