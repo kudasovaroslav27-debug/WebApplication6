@@ -1,6 +1,6 @@
-﻿namespace WebApplication6.Data
+﻿namespace WebApplication6.Constants
 {
-    public record TemplateTypes
+    public class TemplateTypes
     {
         // Типы шаблонов для email/SMS
         public const string Welcome = "Welcome";

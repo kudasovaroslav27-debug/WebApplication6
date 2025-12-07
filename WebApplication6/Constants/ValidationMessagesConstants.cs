@@ -1,6 +1,6 @@
-﻿namespace WebApplication6.Data
+﻿namespace WebApplication6.Constants
 {
-    public record ValidationMessages
+    public class ValidationMessages
     {
         // Сообщения валидации
         public const string UsernameInvalid = "Имя пользователя некорректно. Должно быть не менее {0} символов.";

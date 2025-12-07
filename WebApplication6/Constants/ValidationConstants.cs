@@ -1,6 +1,6 @@
-﻿namespace WebApplication6.Data
+﻿namespace WebApplication6.Constants
 {
-    public record ValidationConstants
+    public class ValidationConstants
     {
         // Константы для валидации пользователя
         public const int MinUsernameLength = 3;

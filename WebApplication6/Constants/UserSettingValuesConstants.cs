@@ -1,6 +1,6 @@
-﻿namespace WebApplication6.Data
+﻿namespace WebApplication6.Constants
 {
-    public record UserSettingValues
+    public class UserSettingValues
     {
         // Константы для значений настроек пользователя
         public const string ThemeLight = "light";

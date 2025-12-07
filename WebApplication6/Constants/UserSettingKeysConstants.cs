@@ -1,6 +1,6 @@
-﻿namespace WebApplication6.Data
+﻿namespace WebApplication6.Constants
 {
-    public record UserSettingKeys
+    public class UserSettingKeys
     {
         // Константы для ключей настроек пользователя
         public const string Theme = "theme";
