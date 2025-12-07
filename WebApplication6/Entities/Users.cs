@@ -2,9 +2,8 @@
 
 namespace WebApplication6.Entities
 {
-    public class User
+    public record User
     {
-
         [Key]
         public int Id { get; set; }
 

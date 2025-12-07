@@ -4,6 +4,9 @@ namespace WebApplication6.UserService
 {
     public class SMSService : ISMSService
     {
+        /// <summary>
+        /// Интерфейс для сервиса отправки SMS.
+        /// </summary>
         private readonly ILogger<SMSService> _logger;
         public SMSService(ILogger<SMSService> logger)
         {

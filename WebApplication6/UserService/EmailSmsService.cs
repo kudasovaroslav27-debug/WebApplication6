@@ -2,10 +2,12 @@
 
 namespace WebApplication6
 {
+    /// <summary>
+    /// Интерфейс для сервиса отправки email.
+    /// </summary>
     public class EmailService : IEmailService
     {
         private readonly ILogger<EmailService> _logger;
-
 
         public EmailService(ILogger<EmailService> logger)
         {

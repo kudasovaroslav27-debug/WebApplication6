@@ -17,18 +17,5 @@ namespace WebApplication6.Controllers
         {
             _context = context;
         }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, UpdateUserDto userUpdateDto)
-        {
-
-            var userToUpdate = await _context.Users.FindAsync(id);
-            userToUpdate.Username = userUpdateDto.UserName;
-            userToUpdate.Email = userUpdateDto.Email;
-
-            await _context.SaveChangesAsync();
-
-            return Ok();
-        }
     }
 }

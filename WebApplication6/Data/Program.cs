@@ -9,7 +9,6 @@ namespace WebApplication6.Data
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            
             builder.Services.AddRazorPages();
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -17,13 +16,20 @@ namespace WebApplication6.Data
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
             });
 
+            var connectionString = builder.Configuration.GetConnectionString("MyEcommerceDb");
+
+            // Теперь регистрируем ApplicationDbContext как IApplicationDbContext
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(connectionString ?? "Data Source=app.db"));
+
+            builder.Services.AddScoped(provider => (IApplicationDbContext)provider.GetRequiredService<ApplicationDbContext>());
+
             builder.Services.AddControllers();
 
             builder.Services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = ".Net 9 API", Version = "v1" });
             });
-
 
             builder.Services.AddOpenApi();
 
